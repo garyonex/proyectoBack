@@ -11,8 +11,12 @@ const server = app.listen(PORT, () => {
     console.log(`Servidor en puerto ${PORT}`);
 });
 
-//Middleware
+//INDICAMOS PLANTILLAS A USAR
+app.set('views', './views')
+//encedemos la plantilla
+app.set('view engine', 'ejs')
 
+//Middleware
 app.use(morgan('dev'))
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
@@ -33,5 +37,13 @@ app.use(multer({ storage }).single('thumbnail'));
 
 
 //Rutas
-app.use('/productos', routeProductos)
-
+const productos= []
+// app.use('/productos', routeProductos)
+app.get('/muestra',(req,res)=>{
+    res.render('raiz',{productos})
+})
+app.post('/prueba',(req,res)=>{
+    const producto = req.body
+    productos.push(producto)
+    res.redirect('/muestra')
+})
