@@ -1,4 +1,4 @@
-<form action="/prueba" method="post">
+<form action="/load-product" method="post">
     <div class="form-group mb-3">
         <label class="form-group-text" id="basic-addon1">Title</la>
         <input
@@ -9,10 +9,10 @@
             aria-describedby="basic-addon1"
             name="title"
             id="title"
+            required
         />
 
         <label class="form-group-text">$</label>
-        <span class="form-group-text">0.00</span>
         <input
             type="text"
             class="form-control"
@@ -20,14 +20,16 @@
             placeholder="Price"
             name="price"
             id="price"
+            required
         />
         <label class="form-group-text" id="basic-addon1">Photo URL</la>
             <input
                 type="url"
                 class="form-control"
-                placeholder="link image"
+                placeholder="Link image"
                 name="url"
                 id="url"
+                required
             />
     </div>
     <button class="btn btn-primary">Cargar</button>

@@ -1,17 +1,20 @@
 <h1 style="color:rgba(36, 36, 182, 0.4) ;">Vista Productos</h1>
 
-<% if (productos.length > 0) {%>
-    <table class="table">
+<% if (product.length > 0) {%>
+    <table class="table table-striped">
         <tr>
+            <th>Id</th>
             <th>Title</th>
             <th>Price</th>
             <th>Photo</th>
         </tr>
-        <% productos.forEach(producto=>{ %>
+        <% product.forEach(producto=>{ %>
                 <tr>
+                    <td> <%= producto.id %> </td>
                     <td> <%= producto.title %> </td>
                     <td> <%= producto.price %> </td>
-                    <td><img src=<%= producto.url %> alt= <%= producto.title %> class="img-thumbnail" style="width: 6rem;"></td>
+                    <td><img src= <%= producto.url %><%= producto.thumbnail %>  alt="" style="width: 6rem;" /></td>
+                   
                 </tr>
             <%}) 
         %>
