@@ -10,7 +10,7 @@ let storage =multer.diskStorage({
         cb(null, path.join(__dirname,'../public/files'))
     },
     filename:(req,file,cb)=>{
-        cb(null, file.originalname)
+        cb(null, path.extname(file.originalname))
     }
 })
 
